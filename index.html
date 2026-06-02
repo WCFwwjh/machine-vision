@@ -475,10 +475,247 @@
       font-weight: 800;
     }
 
+
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .entry-card {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      border-radius: 22px;
+      padding: 26px;
+      border: 1px solid rgba(191, 219, 254, .9);
+      background:
+        radial-gradient(circle at 80% 12%, rgba(56, 189, 248, .20), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .entry-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, #38bdf8, #2563eb, #7dd3fc);
+    }
+
+    .entry-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37, 99, 235, .55);
+      box-shadow: 0 22px 55px rgba(37, 99, 235, .18);
+    }
+
+    .entry-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: white;
+      font-size: 23px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, .24);
+    }
+
+    .entry-card strong {
+      display: block;
+      font-size: 23px;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .entry-card span {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    body:not(.focus-home) #home {
+      display: none;
+    }
+
+    body.focus-home #home {
+      display: block;
+    }
+
+    body.focus-home .layout {
+      grid-template-columns: 1fr;
+      max-width: 1180px;
+    }
+
+    body.focus-home nav {
+      display: none;
+    }
+
+    body.focus-home main > section:not(#home) {
+      display: none;
+    }
+
+    .nav-group {
+      margin: 14px 0 6px;
+      padding: 8px 10px 4px;
+      color: #1e40af;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .8px;
+      border-top: 1px solid rgba(191, 219, 254, 0.8);
+    }
+
+    .process-map {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 22px;
+    }
+
+    .process-step {
+      position: relative;
+      padding: 18px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(147, 197, 253, 0.85);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(239,246,255,0.94));
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.08);
+      min-height: 132px;
+    }
+
+    .process-step::after {
+      content: "→";
+      position: absolute;
+      right: -14px;
+      top: 42%;
+      color: #2563eb;
+      font-weight: 900;
+      font-size: 22px;
+      z-index: 2;
+    }
+
+    .process-step:nth-child(4)::after,
+    .process-step:nth-child(8)::after { display: none; }
+
+    .process-step .num {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      margin-bottom: 10px;
+      box-shadow: 0 0 18px rgba(56, 189, 248, .28);
+    }
+
+    .process-step strong {
+      display: block;
+      color: #1d4ed8;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .process-step span {
+      display: block;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .knowledge-clusters {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .cluster-card {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(191, 219, 254, .9);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.07);
+    }
+
+    .cluster-card strong {
+      display: block;
+      color: #1d4ed8;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .cluster-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #475569;
+    }
+
+    .problem-box {
+      margin: 14px 0 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(147,197,253,.85);
+      background:
+        linear-gradient(90deg, rgba(37,99,235,.10), rgba(56,189,248,.08)),
+        #ffffff;
+      color: #1e3a8a;
+      font-weight: 800;
+    }
+
+    .problem-box span {
+      display: block;
+      color: #64748b;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    .level-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 4px 6px 8px 0;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .map-table td:first-child {
+      font-weight: 800;
+      color: #1d4ed8;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 980px) {
+      .process-map { grid-template-columns: repeat(2, 1fr); }
+      .process-step::after { display: none; }
+      .knowledge-clusters { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .process-map, .knowledge-clusters { grid-template-columns: 1fr; }
+    }
+
+
     @media (max-width: 920px) {
       .layout { grid-template-columns: 1fr; margin-top: 0; padding-top: 22px; }
       nav { position: relative; top: auto; max-height: none; }
       .grid { grid-template-columns: 1fr; }
+      .entry-grid { grid-template-columns: 1fr; }
       .flow { grid-template-columns: 1fr 1fr; }
     }
 
@@ -494,50 +731,107 @@
 <body>
   <header id="top">
     <div class="top-nav" aria-label="快速導覽">
-      <a href="#overview">整體架構</a>
+      <a href="#home">首頁</a>
+      <a href="#overview">知識架構</a>
       <a href="#final-project">期末專題報告</a>
       <a href="#ppt-placeholder">專題 PPT</a>
     </div>
     <div class="hero">
       <span class="eyebrow">知識整合網頁</span>
       <h1>機器視覺檢測</h1>
-      <p class="subtitle">本網站整理機器視覺檢測的基礎知識與專題實作內容，包含 AOI 概念、成像與照明、影像處理方法，以及 PCB 斷線與短路即時檢測專題報告。</p>
+      <p class="subtitle">整合課程知識與期末專題成果，從 AOI 基礎、成像與照明、影像處理方法，到 PCB 斷線與短路即時檢測系統。</p>
     </div>
   </header>
 
   <div class="layout">
     <nav aria-label="章節導覽">
-      <h2>章節導覽</h2>
-      <a href="#overview">總覽</a>
+      <h2>知識架構</h2>
+      <a href="#overview">架構總覽</a>
+      <div class="nav-group">基礎概念</div>
       <a href="#intro">機器視覺簡介</a>
       <a href="#aoi">AOI 定義與需求</a>
       <a href="#function">機器視覺功能</a>
       <a href="#tools">業界常用工具</a>
+      <div class="nav-group">取像與硬體</div>
       <a href="#imaging">成像系統</a>
       <a href="#camera">相機與鏡頭</a>
       <a href="#parameters">取像參數</a>
       <a href="#lighting">照明系統</a>
       <a href="#quality">影像品質</a>
+      <div class="nav-group">影像分析方法</div>
       <a href="#processing">影像處理</a>
       <a href="#segmentation">影像分割</a>
       <a href="#morphology">形態學處理</a>
+      <div class="nav-group">應用與專題</div>
       <a href="#applications">應用案例</a>
     </nav>
 
     <main>
-      <section id="overview">
-        <h2 class="section-title">總覽</h2>
-        <p class="section-desc">本網站整理機器視覺檢測的重要觀念與專題內容，適合作為課堂複習、知識統整與專題展示使用。</p>
-        <div class="grid">
-          <div class="mini-card"><strong>AOI 是什麼？</strong>以非接觸方式自動擷取影像，並分析影像內容，用於控制程序或判斷產品狀態。</div>
-          <div class="mini-card"><strong>適合什麼工作？</strong>適合大量、重複性、高穩定性的工業檢測，例如 PCB、包裝、尺寸與瑕疵檢測。</div>
-          <div class="mini-card"><strong>核心組成</strong>相機、鏡頭、光源、機台、運動控制、影像處理演算法與系統整合。</div>
+
+      <section id="home">
+        <h2 class="section-title">機器視覺檢測知識整合網頁</h2>
+        <p class="section-desc">本網站整理機器視覺檢測的課程知識與期末專題成果，從基礎觀念到 PCB 瑕疵即時檢測，建立完整的學習與展示架構。</p>
+        <div class="entry-grid">
+          <a class="entry-card" href="#overview">
+            <div class="entry-icon">01</div>
+            <strong>知識架構</strong>
+            <span>整理 AOI、成像系統、相機鏡頭、照明、影像處理、分割與形態學等課程重點。</span>
+          </a>
+          <a class="entry-card" href="#final-project">
+            <div class="entry-icon">02</div>
+            <strong>期末專題報告</strong>
+            <span>展示基於 YOLO 的 PCB 斷線與短路即時檢測系統，包含方法比較、流程與完整 PDF。</span>
+          </a>
+          <a class="entry-card" href="#ppt-placeholder">
+            <div class="entry-icon">03</div>
+            <strong>專題 PPT</strong>
+            <span>預留簡報放置區，之後可放入期末展示用 PPT 或簡報大綱。</span>
+          </a>
         </div>
+      </section>
+
+      <section id="overview">
+        <h2 class="section-title">知識架構</h2>
+        <p class="section-desc">機器視覺檢測不是單一技術，而是從影像取得、影像改善、目標分割，到最後判斷結果的完整流程。本頁把課程內容整理成「流程、分類、章節、專題連結」四個層次。</p>
+
+        <h3>機器視覺檢測流程</h3>
+        <div class="process-map">
+          <div class="process-step"><div class="num">1</div><strong>取像</strong><span>透過相機、鏡頭與 FOV 設定取得待測物影像。</span></div>
+          <div class="process-step"><div class="num">2</div><strong>影像品質</strong><span>控制照明、曝光、對焦與雜訊，讓影像穩定。</span></div>
+          <div class="process-step"><div class="num">3</div><strong>影像處理</strong><span>使用濾波、直方圖、強度轉換改善影像可讀性。</span></div>
+          <div class="process-step"><div class="num">4</div><strong>分割</strong><span>用門檻、邊緣或區域方法分出目標與背景。</span></div>
+          <div class="process-step"><div class="num">5</div><strong>形態學</strong><span>修補、去雜訊、連接或分離二值影像中的形狀。</span></div>
+          <div class="process-step"><div class="num">6</div><strong>特徵描述</strong><span>把面積、周長、灰階、紋理等資訊轉成數值。</span></div>
+          <div class="process-step"><div class="num">7</div><strong>匹配 / 分類</strong><span>利用模板匹配、分類器或模型判斷物件類別。</span></div>
+          <div class="process-step"><div class="num">8</div><strong>檢測應用</strong><span>完成定位、量測、驗證與瑕疵檢測。</span></div>
+        </div>
+
+        <h3>四大知識分類</h3>
+        <div class="knowledge-clusters">
+          <div class="cluster-card"><strong>基礎概念</strong><ul><li>機器視覺簡介</li><li>AOI 定義與需求</li><li>機器視覺功能</li></ul></div>
+          <div class="cluster-card"><strong>取像與硬體</strong><ul><li>成像系統</li><li>相機與鏡頭</li><li>取像參數</li><li>照明系統</li></ul></div>
+          <div class="cluster-card"><strong>影像分析方法</strong><ul><li>影像處理</li><li>影像分割</li><li>形態學處理</li><li>影像品質優化</li></ul></div>
+          <div class="cluster-card"><strong>辨識與檢測</strong><ul><li>業界常用工具</li><li>量測與驗證</li><li>瑕疵檢測</li><li>專題應用</li></ul></div>
+        </div>
+
+        <h3>課程知識與期末專題對應</h3>
+        <table class="map-table">
+          <thead><tr><th>課程知識</th><th>專題中的應用</th></tr></thead>
+          <tbody>
+            <tr><td>AOI 自動光學檢測</td><td>用於 PCB open / short 瑕疵檢測，建立自動化判斷流程。</td></tr>
+            <tr><td>取像參數與影像品質</td><td>手機固定、保持對焦、避免過曝與減少畫面晃動。</td></tr>
+            <tr><td>影像處理</td><td>OpenCV 讀取影像、縮放、灰階化與二值化處理。</td></tr>
+            <tr><td>參考比對法</td><td>使用 SSIM 比較正常圖與瑕疵圖之間的結構差異。</td></tr>
+            <tr><td>形態學 / 連通元件</td><td>判斷 PCB 線路在 ROI 中是 connected 或 separated。</td></tr>
+            <tr><td>分類技術</td><td>使用 YOLO 判斷瑕疵類別，包含 open 斷路與 short 短路。</td></tr>
+          </tbody>
+        </table>
       </section>
 
       <section id="intro">
         <h2 class="section-title">機器視覺簡介</h2>
         <p class="section-desc">機器視覺和光學、影像處理、電腦視覺、機器學習與機器人視覺都有關係，但應用重點不同。</p>
+        <div class="problem-box">這章解決的問題：機器視覺和其他影像相關領域差在哪裡？<span>先建立整體觀念，後面才知道每個技術放在系統中的位置。</span></div>
         <table>
           <thead><tr><th>領域</th><th>輸入</th><th>輸出</th><th>重點</th></tr></thead>
           <tbody>
@@ -555,6 +849,7 @@
       <section id="aoi">
         <h2 class="section-title">AOI 定義與需求</h2>
         <p class="section-desc">AOI 是 Automated Optical Inspection，自動化光學檢測。</p>
+        <div class="problem-box">這章解決的問題：為什麼工業檢測需要自動化？<span>重點是大量生產、品質穩定，以及減少人工檢測誤差。</span></div>
         <h3>定義</h3>
         <p>AOI 以非接觸的方式自動擷取影像，並透過自動影像分析，從影像中抽取資料，以控制程序或動作。</p>
         <h3>需求</h3>
@@ -596,6 +891,7 @@
       <section id="imaging">
         <h2 class="section-title">成像系統</h2>
         <p class="section-desc">成像系統決定影像能不能清楚呈現檢測目標，是 AOI 成功的基礎。</p>
+        <div class="problem-box">這章解決的問題：如何讓相機拍到正確範圍與足夠細節？<span>FOV、Sensor Size、鏡頭倍率會直接影響檢測範圍與解析度。</span></div>
         <h3>基本成像原理</h3>
         <p>鏡頭會把物面的資訊投影到像面，投影後的影像會上下左右相反。</p>
         <h3>Image Circle 與 Sensor Size</h3>
@@ -608,6 +904,7 @@
       <section id="camera">
         <h2 class="section-title">相機與鏡頭</h2>
         <p class="section-desc">相機與鏡頭選用會影響 FOV、解析度、工作距離、影像變形與量測準確度。</p>
+        <div class="problem-box">這章解決的問題：檢測系統要選什麼相機與鏡頭？<span>要同時考慮視野大小、像素解析度、工作距離與變形問題。</span></div>
         <h3>相機規格</h3>
         <div class="tag-row"><span class="tag">感光元件</span><span class="tag">取像快門</span><span class="tag">傳輸介面</span><span class="tag">相機接口</span><span class="tag">相機選用</span></div>
         <h3>鏡頭規格</h3>
@@ -620,6 +917,7 @@
       <section id="parameters">
         <h2 class="section-title">取像參數</h2>
         <p class="section-desc">好的影像要清楚、亮度適中、不模糊、不過曝。</p>
+        <div class="problem-box">這章解決的問題：如何避免拍出模糊、過暗或過曝的影像？<span>曝光、Gain、光圈與對焦會影響後續所有檢測結果。</span></div>
         <div class="grid">
           <div class="mini-card"><strong>光圈</strong>控制景深與進光量。F# 小代表光圈大、景深淺、進光多；F# 大代表光圈小、景深深、進光少。</div>
           <div class="mini-card"><strong>曝光時間</strong>曝光越長畫面越亮；物體移動時曝光太長會造成模糊。</div>
@@ -632,6 +930,7 @@
       <section id="lighting">
         <h2 class="section-title">照明系統</h2>
         <p class="section-desc">照明的目標是凸顯重要特徵，壓抑不重要背景，讓檢測更穩定。</p>
+        <div class="problem-box">這章解決的問題：如何讓瑕疵和背景的差異變明顯？<span>好的照明能凸顯重要特徵，並壓抑不重要背景。</span></div>
         <h3>光源種類</h3>
         <p>常見光源包含鎢絲燈、鹵素燈、氙氣燈、螢光燈與 LED。AOI 中最常用的是 LED，因為它低熱、低耗電、壽命長、亮度容易控制，也能做成不同形狀。</p>
         <h3>照明方式</h3>
@@ -658,6 +957,7 @@
       <section id="processing">
         <h2 class="section-title">影像處理</h2>
         <p class="section-desc">影像處理用來改善影像、強化特徵、降低雜訊，讓後續檢測更容易。</p>
+        <div class="problem-box">這章解決的問題：如何把不好分析的原始影像變得更清楚？<span>強度轉換、直方圖與濾波器可以改善對比、降低雜訊或強化邊緣。</span></div>
         <h3>強度轉換</h3>
         <div class="tag-row"><span class="tag">二值化</span><span class="tag">負轉換</span><span class="tag">對數轉換</span><span class="tag">指數轉換</span></div>
         <h3>直方圖與直方圖等化</h3>
@@ -673,6 +973,7 @@
       <section id="segmentation">
         <h2 class="section-title">影像分割</h2>
         <p class="section-desc">影像分割是把影像切分成構成區域或物體，直到感興趣區域被偵測出來。</p>
+        <div class="problem-box">這章解決的問題：如何把目標物和背景分開？<span>分割結果會影響後續的量測、特徵擷取與瑕疵判斷。</span></div>
         <h3>邊緣偵測</h3>
         <p>常見方法包含 Roberts、Prewitt、Sobel。Sobel 會做相鄰行列的差值，且相鄰中心點權重較重。</p>
         <h3>門檻化分割</h3>
@@ -690,6 +991,7 @@
       <section id="morphology">
         <h2 class="section-title">形態學處理</h2>
         <p class="section-desc">形態學是用來處理影像形狀的工具，常用於二值影像中的雜訊清除、形狀保留與特徵萃取。</p>
+        <div class="problem-box">這章解決的問題：如何修補、清除或強化二值影像中的形狀？<span>侵蝕、膨脹、斷開、閉合可用來處理線路、孔洞與雜訊。</span></div>
         <div class="grid">
           <div class="mini-card"><strong>侵蝕 Erosion</strong>縮小前景，可去除小雜訊或不感興趣的細小區域。</div>
           <div class="mini-card"><strong>膨脹 Dilation</strong>擴大前景，可連接破碎區域或填補小縫隙。</div>
@@ -705,6 +1007,7 @@
       <section id="applications">
         <h2 class="section-title">應用案例</h2>
         <p class="section-desc">機器視覺檢測可以應用在 PCB、包裝、尺寸量測與瑕疵檢測等場景。</p>
+        <div class="problem-box">這章解決的問題：前面的知識最後可以用在哪些檢測場景？<span>應用案例能把課程方法和專題實作連在一起。</span></div>
         <div class="grid">
           <div class="mini-card"><strong>PCB 檢測</strong>斷線、短路、缺孔、線寬、焊點與錫橋檢測。</div>
           <div class="mini-card"><strong>包裝檢測</strong>條碼讀取、OCR、標籤位置驗證與包裝完整性檢查。</div>
@@ -718,13 +1021,12 @@
 
       <section id="final-project">
         <h2 class="section-title">期末專題報告</h2>
-        <p class="section-desc">本頁放入完整 PDF：〈基於 YOLO 之 PCB 斷線與短路即時檢測系統〉，可直接在網頁內閱讀。</p>
 
         <div class="note-box">
           <strong>專題主題：</strong>使用 YOLO 偵測 PCB 線路圖中的 open 斷路與 short 短路，並結合手機即時拍攝、DroidCam 影像輸入、SSIM 結構差異比對與連通元件分析，建立 PCB 瑕疵檢測流程。
         </div>
 
-        <h3>專題重點整理</h3>
+        <h3>專題摘要</h3>
         <div class="grid">
           <div class="mini-card"><strong>檢測目標</strong>針對 PCB 上的 open 與 short 瑕疵進行偵測，並比較 YOLO only 與 YOLO + SSIM + 連通元件分析的效果。</div>
           <div class="mini-card"><strong>檢測物件</strong>檢測螢幕上顯示的 PCB 線路圖，再用手機拍攝後傳到電腦端做即時辨識。</div>
@@ -734,7 +1036,7 @@
           <div class="mini-card"><strong>課程連結</strong>對應 AOI、瑕疵檢測、參考比對法、影像特徵分析、形態學、分類技術、取像參數與即時影像匹配。</div>
         </div>
 
-        <h3>檢測方法比較</h3>
+        <h3>方法比較</h3>
         <table>
           <thead><tr><th>方法</th><th>主要功能</th><th>優點</th><th>限制</th></tr></thead>
           <tbody>
@@ -744,7 +1046,7 @@
           </tbody>
         </table>
 
-        <h3>專題流程</h3>
+        <h3>流程整理</h3>
         <div class="timeline">
           <div><strong>資料蒐集與整理：</strong>使用 DeepPCB 資料集，整理正常圖、測試圖與標註檔。</div>
           <div><strong>資料分類與格式轉換：</strong>篩選 open / short，切分 train、val、test，並轉成 YOLO 格式。</div>
@@ -758,7 +1060,6 @@
         </div>
 
         <h3>完整 PDF</h3>
-        <p>下面已把整份 PDF 直接嵌入網頁中，可以在此區完整瀏覽 15 頁專題報告。</p>
         <div class="pdf-panel">
           <div class="pdf-toolbar">
             <span>期末專題報告｜完整 PDF</span>
@@ -794,8 +1095,10 @@
     const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
 
     function updatePageMode() {
-      const hash = window.location.hash || '#overview';
-      document.body.classList.toggle('focus-page', hash === '#final-project' || hash === '#ppt-placeholder');
+      const hash = window.location.hash || '#home';
+      const isFocus = hash === '#home' || hash === '#final-project' || hash === '#ppt-placeholder';
+      document.body.classList.toggle('focus-page', isFocus);
+      document.body.classList.toggle('focus-home', hash === '#home');
       document.body.classList.toggle('focus-final', hash === '#final-project');
       document.body.classList.toggle('focus-ppt', hash === '#ppt-placeholder');
     }
